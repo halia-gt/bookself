@@ -1,67 +1,29 @@
-export default function App() {
-    return (
-        <Footer>
-            <div></div>
-            <div className="absoluto"></div>
-            <div className="div-interna">
-                <div className="bola"></div>
-            </div>
-            <div></div>
-        </Footer>
-    );
-}
+CORES:
+            #132743
+Verde escuro: #43888F 
+Azul claro: #7DC4CA
+Amarelo claro: #FAEEC8
+Salmão claro: #FAC8BF
+Salmão escuro: #FA9EA9
+Lilás: #A4A2D6
 
-const Footer = styled.footer`
-    height: 80px;
-    display: flex;
-    position: relative;
-    margin-top: 50px;
+DEGRADÊ VERDE:
+#EDE6DB
+#417D7A
+#1D5C63
+#1A3C40
 
-    * {
-        border: none;
-    }
+JOYBOOK:
+#141C2E
+#17637E
+#1B7695
+#EE9F55
+#FDAB5B
+#143137
 
-    div {
-        border: none;
-    }
-    
-    div:first-child {
-        background-color: red;
-        width: calc(50% - 55px);
-        height: 100%;
-        border-radius: 20px 20px 0 0;
-    }
-
-    .absoluto {
-        height: 90px;
-        width: 90px;
-        background-color: cyan;
-        position: absolute;
-        left: calc(50% - 45px);
-        border-radius: 50%;
-        bottom: calc(60px - 55px + 10px);
-    }
-
-    .div-interna {
-        background-color: red;
-        width: 110px; //10px de "padding externo" (círculo interno de 90px)
-        height: 60px;
-        margin-top: 20px;
-        border-top: 1px white;
-    }
-
-    .div-interna .bola {
-        background-color: white;
-        width: 110px;
-        height: 55px;
-        border-radius: 0 0 110px 110px;
-        margin-top: -1px;
-    }
-
-    div:last-child {
-        background-color: red;
-        width: calc(50% - 55px);
-        height: 100%;
-        border-radius: 20px 20px 0 0;
-    }
-`;
+ULTIMATE CHOICE, MAYBE *******************************:
+#FFB5B5
+#FFE2E0
+#D1C9C0
+#70ADB5
+#407088
