@@ -11,4 +11,5 @@ export default function SectionTitle({ children }) {
 const Wrapper = styled.h3`
     color: var(--text-black);
     font-size: 18px;
+    font-weight: bold;
 `;
