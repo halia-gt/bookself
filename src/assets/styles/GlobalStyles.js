@@ -61,6 +61,18 @@ const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+
+    :root {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        --main-white: #f0f0f0;
+        --main-color: #407088;
+        --secondary-focus: #70ADB5;
+        --neutral-color: #D1C9C0;
+        --accent-light: #FFE2E0;
+        --accent-color: #FFB5B5;
+        --text-black: #333333;
+    }
 `;
 
 export { GlobalStyles };

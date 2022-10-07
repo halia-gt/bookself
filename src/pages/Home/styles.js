@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.main`
-    background-color: #407088;
+    background-color: var(--main-color);
     width: 100vw;
     height: auto;
 
@@ -10,12 +10,11 @@ const Wrapper = styled.main`
     }
 
     main {
-        background-color: #F0F0F0;
+        background-color: var(--main-white);
         border-radius: 20px 20px 0 0;
         box-shadow: 0px -4px 6px 2px rgba(0, 0, 0, 0.05);
         padding: 10px;
-        height: 100px;
-        position: relative;
+        height: auto;
     }
 `;
 

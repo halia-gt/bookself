@@ -27,7 +27,7 @@ const NavMid = styled.nav`
     position: relative;
 
     div {
-        background-color: #F0F0F0;
+        background-color: var(--main-white);
         width: 110px;
         height: 55px;
         border-radius: 0 0 110px 110px;
@@ -37,7 +37,7 @@ const NavMid = styled.nav`
     button {
         height: 90px;
         width: 90px;
-        background-color: #FFB5B5;
+        background-color: var(--accent-color);
         position: absolute;
         left: calc(50% - 45px);
         border-radius: 50%;

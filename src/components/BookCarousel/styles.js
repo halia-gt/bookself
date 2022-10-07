@@ -3,10 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.section`
     width: 100%;
     height: auto;
-    position: absolute;
-    top: -20vh;
-    left: 0;
-    right: 0;
+    margin-top: -20vh;
 
     div {
         width: 100%;
@@ -23,11 +20,11 @@ const Wrapper = styled.section`
 
     svg {
         font-size: 30px;
-        color: #70ADB5;
+        color: var(--secondary-focus);
     }
 
     h2, h3 {
-        color: #333333;
+        color: var(--text-black);
         text-align: center;
     }
 
@@ -38,7 +35,6 @@ const Wrapper = styled.section`
     }
 
     h3 {
-        font-family: 'Roboto', sans-serif;
         font-size: 13px;
         margin-top: .2rem;
     }
