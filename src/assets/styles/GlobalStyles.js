@@ -67,8 +67,9 @@ const GlobalStyles = createGlobalStyle`
         font-weight: 400;
         --main-white: #f0f0f0;
         --main-color: #407088;
-        --secondary-focus: #70ADB5;
+        --secondary-color: #70ADB5;
         --neutral-color: #D1C9C0;
+        --neutral-dark: #a89989;
         --accent-light: #FFE2E0;
         --accent-color: #FFB5B5;
         --text-black: #333333;

@@ -15,7 +15,7 @@ const Wrapper = styled.section`
     img {
         object-fit: cover;
         width: 275px;
-        box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 30px -4px rgba(0, 0, 0, 0.4);
     }
 
     svg {
