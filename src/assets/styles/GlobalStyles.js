@@ -73,6 +73,7 @@ const GlobalStyles = createGlobalStyle`
         --accent-light: #FFE2E0;
         --accent-color: #FFB5B5;
         --text-black: #333333;
+        --main-gray: #C5D4DB;
     }
 `;
 

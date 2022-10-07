@@ -15,12 +15,12 @@ const Wrapper = styled.section`
     img {
         object-fit: cover;
         width: 275px;
-        box-shadow: 0 0 30px -4px rgba(0, 0, 0, 0.4);
+        box-shadow: 10px 10px 20px -2px rgba(0, 0, 0, 0.4);
     }
 
     svg {
         font-size: 30px;
-        color: var(--secondary-focus);
+        color: var(--secondary-color);
     }
 
     h2, h3 {

@@ -16,6 +16,10 @@ const NavWrapper = styled.nav`
     height: 100%;
     border-radius: 20px 20px 0 0;
     box-shadow: 0px -4px 6px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
 `;
 
 const NavMid = styled.nav`
@@ -43,11 +47,42 @@ const NavMid = styled.nav`
         border-radius: 50%;
         bottom: calc(60px - 55px + 10px);
         box-shadow: 0 -4px 6px 2px rgba(0, 0, 0, 0.05);
+        font-size: 1rem;
+        color: var(--main-white);
     }
+`;
+
+const HomeWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: ${props => props.home ? 'var(--main-color)' : 'var(--neutral-color)'};
+    font-size: 0.8rem;
+
+    svg {
+        font-size: 30px;
+        margin-bottom: 0.3rem;
+    }
+`;
+
+const ShelfWrapper = styled(HomeWrapper)`
+    color: ${props => props.shelf ? 'var(--main-color)' : 'var(--neutral-color)'};
+`;
+
+const SeriesWrapper = styled(HomeWrapper)`
+    color: ${props => props.series ? 'var(--main-color)' : 'var(--neutral-color)'};
+`;
+
+const TBRWrapper = styled(HomeWrapper)`
+    color: ${props => props.tbr ? 'var(--main-color)' : 'var(--neutral-color)'};
 `;
 
 export {
     Wrapper,
     NavWrapper,
-    NavMid
+    NavMid,
+    HomeWrapper,
+    ShelfWrapper,
+    SeriesWrapper,
+    TBRWrapper
 };
