@@ -35,3 +35,337 @@ ULTIMATE CHOICE, MAYBE *******************************:
 #70ADB5
 #407088
 Branco: #f0f0f0
+
+{
+    "kind": "books#volume",
+    "id": "zyTCAlFPjgYC",
+    "etag": "f0zKg75Mx/I",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC",
+    "volumeInfo": {
+        "title": "The Google story",
+        "authors": [
+            "David A. Vise",
+            "Mark Malseed"
+        ],
+        "publisher": "Random House Digital, Inc.",
+        "publishedDate": "2005-11-15",
+        "description": "\"Here is the story behind one of the most remarkable Internet successes of our time. Based on scrupulous research and extraordinary access to Google, ...",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_10",
+                "identifier": "055380457X"
+            },
+            {
+                "type": "ISBN_13",
+                "identifier": "9780553804577"
+            }
+        ],
+        "pageCount": 207,
+        "dimensions": {
+            "height": "24.00 cm",
+            "width": "16.03 cm",
+            "thickness": "2.74 cm"
+        },
+        "printType": "BOOK",
+        "mainCategory": "Business & Economics / Entrepreneurship",
+        "categories": [
+            "Browsers (Computer programs)",
+            ...
+        ],
+        "averageRating": 3.5,
+        "ratingsCount": 136,
+        "contentVersion": "1.1.0.0.preview.2",
+        "imageLinks": {
+            "smallThumbnail": "https://books.google.com/books?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "https://books.google.com/books?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "https://books.google.com/books?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+            "medium": "https://books.google.com/books?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=3&edge=curl&source=gbs_api",
+            "large": "https://books.google.com/books?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=4&edge=curl&source=gbs_api",
+            "extraLarge": "https://books.google.com/books?id=zyTCAlFPjgYC&printsec=frontcover&img=1&zoom=6&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "infoLink": "https://books.google.com/books?id=zyTCAlFPjgYC&ie=ISO-8859-1&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Google_story.html?id=zyTCAlFPjgYC"
+    },
+    "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+            "amount": 11.99,
+            "currencyCode": "USD"
+        },
+        "retailPrice": {
+            "amount": 11.99,
+            "currencyCode": "USD"
+        },
+        "buyLink": "https://books.google.com/books?id=zyTCAlFPjgYC&ie=ISO-8859-1&buy=&source=gbs_api"
+    },
+    "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+            "isAvailable": true,
+            "acsTokenLink": "https://books.google.com/books/download/The_Google_story-sample-epub.acsm?id=zyTCAlFPjgYC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+            "isAvailable": false
+        },
+        "accessViewStatus": "SAMPLE"
+    }
+}
+
+<GoodreadsResponse>
+<GoodreadsResponse>
+    <Request>
+        <!-- ... request metadata omitted ... -->
+    </Request>
+    <search>
+        <query>
+        <![CDATA[ Ender's Game ]]>
+        </query>
+        <results-start>1</results-start>
+        <results-end>10</results-end>
+        <total-results>100</total-results>
+        <source>Goodreads</source>
+        <query-time-seconds>0.10</query-time-seconds>
+        <results>
+        <work>
+            <books_count type="integer">1</books_count>
+            <id type="integer">11571577</id>
+            <original_publication_day type="integer">30</original_publication_day>
+            <original_publication_month type="integer">4</original_publication_month>
+            <original_publication_year type="integer">2010</original_publication_year>
+            <ratings_count type="integer">300</ratings_count>
+            <text_reviews_count type="integer">16</text_reviews_count>
+            <average_rating>4.17</average_rating>
+            <best_book type="Book">
+            <id type="integer">8782597</id>
+            <title>Ender's Game</title>
+            <author>
+                <id type="integer">2940867</id>
+                <name>Frederic P. Miller</name>
+            </author>
+            <image_url>
+                https://s.gr-assets.com/assets/nophoto/book/111x148-6204a98ba2aba2d1aa07b9bea87124f8.png
+            </image_url>
+            <small_image_url>
+                https://s.gr-assets.com/assets/nophoto/book/50x75-6121bf4c1f669098041843ec9650ca19.png
+            </small_image_url>
+            </best_book>
+        </work>
+        <!-- ... additional results omitted ... -->
+        </results>
+    </search>
+</GoodreadsResponse>
+
+
+
+//LVL 1
+Table books.volumes {
+  id int [pk, increment]
+  title varchar
+  author varchar
+  publisher_id int [ref: - books.publishers.id]
+  publication_date date
+  pages int
+  hours time //HH:MM
+  genre_id int [ref: - books.genres.id]
+  subgenres_id int [ref: - books.subgenres.id]
+  audience_id int [ref: - books.audiences.id]
+  series_id int // nullable, livro pode não ser de uma série
+  classic boolean
+  small_image text
+  large_image text
+}
+
+//Dados "duplos", faz assim no postgres:
+//EXTRACT(MONTH FROM finished_date) AS month_read
+
+Table authors.authors {
+  id int [pk, increment]
+  name varchar
+  identity authors.authors_identities
+  country_id int [ref: - authors.countries.id]
+}
+
+// STATUS do autor (lido antes, ou novo pra mim, fica pra ser calculado caso eu já tenha livros do author na minha coleção de lidos)
+
+Table authors.countries {
+  id int [pk, increment]
+  name varchar
+}
+
+Table books.publishers {
+  id int [pk, increment]
+  name varchar
+}
+
+Table books.genres {
+  id int [pk, increment]
+  name books.genres_name
+}
+
+Table books.subgenres {
+  id int [pk, increment]
+  name varchar
+}
+
+Table books.audiences {
+  id int [pk, increment]
+  name books.audiences_name
+}
+
+Table books.series {
+  id int [pk, increment]
+  name varchar
+}
+
+Table books.representativities {
+  id int [pk, increment]
+  name varchar
+}
+
+Table shelves.books_read {
+  id int [pk, increment]
+  volume_id int [ref: - books.volumes.id]
+  rating numeric
+  book_language books.books_languages
+  book_format books.books_formats
+  author_status authors.authors_status
+  acquired books.book_acquired
+  date_started date // default: now()
+  date_finished date // default: now()
+  days_to_read int // Só quando finalizar
+}
+
+Table shelves.owned {
+  id int [pk, increment]
+  volume_id int [ref: - books.volumes.id]
+  read boolean
+  book_format books.books_formats
+  acquired books.book_acquired
+}
+
+Table shelves.purchases {
+  id int [pk, increment]
+  volume_id int [ref: - books.volumes.id]
+  book_format books.books_formats
+  store varchar
+  price int
+}
+
+Table shelves.tbr {
+  id int [pk, increment]
+  volume_id int [ref: - books.volumes.id]
+  access books.books_access
+}
+
+Table shelves.series {
+  id int [pk, increment]
+  series_id int [ref: - books.series.id]
+  user_status books.series_user_status
+}
+
+//LVL 2 -----------------------------
+Table books.authors_volumes {
+  id int [pk, increment]
+  author_id int [ref:  - authors.authors.id]
+  volume_id int [ref: - books.volumes.id]
+}
+
+Table books.series_volumes {
+  id int [pk, increment]
+  volume_id int [ref: - books.volumes.id] //unique!
+  series_id int [ref: - books.series.id]
+  order int
+  total_number_of_books int
+  publish_status books.series_publish_status
+}
+
+Table books.representativities_volumes {
+  id int [pk, increment]
+  representativity_id int [ref: - books.representativities.id]
+  volume_id int [ref: - books.volumes.id]
+}
+
+//LVL 3 ENUMS ----------------------
+Enum authors.authors_identities {
+  Male
+  Female
+  Other
+}
+
+Enum books.audiences_name {
+  Children
+  "Young Adult"
+  Adult
+}
+
+Enum books.genres_name {
+  Comedy
+  Fantasy
+  Historical
+  Horror
+  "Literary Fiction"
+  "Magical Realism"
+  "Non Fiction"
+  Romance
+  "Science Fiction"
+}
+
+Enum books.series_publish_status {
+  Complete
+  Ongoing
+}
+
+Enum books.series_user_status {
+  Completed
+  Started
+  "Caught Up"
+  DNF
+  TBR
+}
+
+Enum books.books_formats {
+  ebook
+  Audiobook
+  Physical
+  Manga
+}
+
+Enum books.representativities {
+  "LGBTQIA+"
+  Racial
+  Disability
+}
+
+Enum authors.authors_status {
+  "New to me"
+  "Read before"
+  Debut
+}
+
+Enum books.book_acquired {
+  "Kindle Unlimited"
+  Bought
+  Gift
+  Storytel
+  Library
+  Borrowed
+}
+
+Enum books.books_access {
+  "Kindle Unlimited"
+  Storytel
+  Owned
+}
+
+Enum books.books_languages {
+  Portuguese
+  English
+  Spanish
+}

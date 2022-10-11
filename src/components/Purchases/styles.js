@@ -5,7 +5,7 @@ const Wrapper = styled.section`
     color: var(--text-black);
 
     & > div {
-        background-color: var(--neutral-color);
+        background-color: #fdfdfd;
         margin-top: 1rem;
         display: flex;
         padding: 0.6rem;
@@ -44,6 +44,8 @@ const Wrapper = styled.section`
         bottom: 1rem;
         right: 1.2rem;
         font-size: 1.2rem;
+        color: var(--secondary-color);
+        font-weight: bold;
     }
 `;
 

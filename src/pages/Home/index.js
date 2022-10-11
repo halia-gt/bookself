@@ -2,6 +2,7 @@ import BookCarousel from "../../components/BookCarousel";
 import Footer from "../../components/Footer";
 import NextReads from "../../components/NextReads";
 import Purchases from "../../components/Purchases";
+import StatsSummary from "../../components/StatsSummary";
 import { Wrapper } from "./styles";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
                     <BookCarousel />
                     <NextReads />
                     <Purchases />
+                    <StatsSummary />
                 </main>
             </Wrapper>
             <Footer />

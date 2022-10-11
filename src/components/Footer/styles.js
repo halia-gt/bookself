@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
 `;
 
 const NavWrapper = styled.nav`
-    background-color: #FFFFFF;
+    background-color: #fdfdfd;
     width: calc(50% - 55px);
     height: 100%;
     border-radius: 20px 20px 0 0;
@@ -23,7 +23,7 @@ const NavWrapper = styled.nav`
 `;
 
 const NavMid = styled.nav`
-    background-color: #FFFFFF;
+    background-color: #fdfdfd;
     width: 110px;
     height: 60px;
     margin-top: 20px;
