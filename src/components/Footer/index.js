@@ -8,6 +8,7 @@ import {
     IoRocketOutline,
     IoRocket,
 } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import {
     Wrapper,
     NavWrapper,
@@ -19,15 +20,17 @@ import {
 } from "./styles";
 
 export default function Footer({ home = false, shelf = false, series = false, tbr = false }) {
+    const navigate = useNavigate();
+
     return(
         <Wrapper>
             <NavWrapper>
                 <HomeWrapper home={home}>
-                    {home ? <IoHome /> : <IoHomeOutline />}
+                    {home ? <IoHome /> : <IoHomeOutline onClick={() => {navigate('/')}} />}
                     Home
                 </HomeWrapper>
                 <ShelfWrapper shelf={shelf}>
-                    {shelf ? <IoLibrary /> : <IoLibraryOutline />}
+                    {shelf ? <IoLibrary /> : <IoLibraryOutline onClick={() => {navigate('/shelves')}} />}
                     Shelves
                 </ShelfWrapper>
             </NavWrapper>

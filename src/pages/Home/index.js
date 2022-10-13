@@ -17,7 +17,7 @@ export default function Home() {
                     <StatsSummary />
                 </main>
             </Wrapper>
-            <Footer />
+            <Footer home={true} />
         </>
     );
 }
