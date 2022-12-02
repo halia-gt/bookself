@@ -16,11 +16,11 @@ export default function NextReads() {
             </SectionTitle>
             <div>
                 {bookList.map((img, index) => (
-                    <ImageWrapper key={index} img={img}>
+                    <ImageWrapper key={index} img={true}>
                         {img ? <img src={img} alt="bookimage"/> : <>+</>}
                     </ImageWrapper>
                 ))}
             </div>
-        </Wrapper>  
+        </Wrapper>
     );
 }

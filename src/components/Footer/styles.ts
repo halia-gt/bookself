@@ -52,7 +52,12 @@ const NavMid = styled.nav`
     }
 `;
 
-const HomeWrapper = styled.div`
+const HomeWrapper = styled.div<{
+        home?: boolean,
+        shelf?: boolean,
+        series?: boolean,
+        tbr?: boolean
+    }>`
     display: flex;
     flex-direction: column;
     align-items: center;

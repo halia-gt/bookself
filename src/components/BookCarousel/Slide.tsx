@@ -1,6 +1,13 @@
 import { LiWrapper } from "./styles";
 
-export default function Slide({ id, image, title, author, nextBook, prevBook }) {
+export default function Slide({
+        id,
+        image,
+        title,
+        author,
+        nextBook,
+        prevBook
+    }) {
     return (
         <LiWrapper>
             <div>

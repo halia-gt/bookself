@@ -9,7 +9,9 @@ export default function Home() {
     return (
         <>
             <Wrapper>
-                <header></header>
+                <header>
+                    <h1>Bookself</h1>
+                </header>
                 <main>
                     <BookCarousel />
                     <NextReads />

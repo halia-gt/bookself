@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Slide from "./Slide";
 
 export default function BookCarousel() {
-    const carousel = useRef(null);
+    const carousel = useRef<HTMLUListElement>(null);
 
     const bookList = [{
             id: 1,
@@ -24,14 +24,16 @@ export default function BookCarousel() {
         }
     ];
 
-    function nextBook(e) {
-        e.preventDefault();
-        carousel.current.scrollLeft += carousel.current.offsetWidth
+    function nextBook() {
+        if (carousel.current) {
+            carousel.current.scrollLeft += carousel.current.offsetWidth;
+        }
     }
 
-    function prevBook(e) {
-        e.preventDefault();
-        carousel.current.scrollLeft -= carousel.current.offsetWidth
+    function prevBook() {
+        if (carousel.current) {
+            carousel.current.scrollLeft -= carousel.current.offsetWidth;        
+        }
     }
 
     return (

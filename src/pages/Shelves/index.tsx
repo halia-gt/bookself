@@ -6,7 +6,12 @@ export default function Shelves() {
         <>
             <MainWrapper>
                 <header></header>
-                <main></main>
+                <main>
+                    <div>
+                        <img src="" alt="" />
+                        <div>Estrelas</div>
+                    </div>
+                </main>
             </MainWrapper>
             <Footer shelf={true} />
         </>

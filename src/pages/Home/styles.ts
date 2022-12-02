@@ -7,6 +7,14 @@ const Wrapper = styled.main`
 
     header {
         height: 30vh;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        color: var(--main-white);
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: 'Libre Baskerville', serif;
     }
 
     main {
@@ -14,9 +22,8 @@ const Wrapper = styled.main`
         border-radius: 40px 40px 0 0;
         box-shadow: 0px -4px 6px 2px rgba(0, 0, 0, 0.05);
         padding: 10px;
-        padding-bottom: 40px;
+        padding-bottom: 100px;
         height: auto;
-        margin-bottom: 60px;
     }
 `;
 
