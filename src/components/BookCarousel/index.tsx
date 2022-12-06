@@ -1,12 +1,15 @@
 import { Wrapper } from "./styles";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slide from "./Slide";
+import { getReadingBooks } from "services/api";
+import { ReadingBook } from "protocols";
 
 export default function BookCarousel() {
     const carousel = useRef<HTMLUListElement>(null);
+    const [bookList, setBookList] = useState<ReadingBook[] | []>([]);
 
-    const bookList = [{
+    const bookList1 = [{
             id: 1,
             image: 'https://m.media-amazon.com/images/I/81pA6-hv+2L.jpg',
             title: 'The Institue',
@@ -23,6 +26,16 @@ export default function BookCarousel() {
             author: 'Samantha Shannon'
         }
     ];
+
+    useEffect(() => {
+        getReadingBooks()
+            .then((response) => {
+                setBookList(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    });
 
     function nextBook() {
         if (carousel.current) {
@@ -43,10 +56,11 @@ export default function BookCarousel() {
             </button>
 
             <ul ref={carousel}>
-                {bookList.map(book => (
-                    <Slide key={book.id} {...book} nextBook={nextBook} prevBook={prevBook} />
+                {bookList.map((book: ReadingBook) => (
+                    <Slide key={book.id} {...book} />
                 ))}
             </ul>
+
             <button onClick={nextBook}>
                 <IoIosArrowForward />
             </button>
