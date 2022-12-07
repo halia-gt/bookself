@@ -1,37 +1,29 @@
 import { Wrapper } from "./styles";
 import SectionTitle from "../../assets/styles/SectionTitle";
+import { useEffect, useState } from "react";
+import { getLastThreePurchases } from "services/api";
+import { Purchases } from "protocols";
 
-export default function Purchases() {
-    const bookList = [{
-        title: 'The house in the cerulean sea',
-        author: 'TJ Klune',
-        image: 'https://m.media-amazon.com/images/I/81MnY8Q7OLL.jpg',
-        price: 32.40,
-        format: 'ebook',
-        store: 'Amazon'
-    }, {
-        title: 'The priority of the orange tree',
-        author: 'Samantha Shannon',
-        image: 'https://m.media-amazon.com/images/I/91ZQaXqO2nL.jpg',
-        price: 52.23,
-        format: 'physical',
-        store: 'Amazon'
-    }, {
-        title: 'Malibu rising',
-        author: 'Taylor Jenkins Reid',
-        image: 'https://1.bp.blogspot.com/-0kbISjfq0jU/YMdQp7iJ48I/AAAAAAAAacw/HPAfI1D7ibQFEjRwf8QNqOEa5DgapfE2QCLcBGAsYHQ/s650/9788584392162_gg.jpg',
-        price: 16.50,
-        format: 'audiobook',
-        store: 'Storytel'
-    }];
+export default function LastPurchases() {
+    const [bookList, setBookList] = useState<Purchases[] | []>([]);
+
+    useEffect(() => {
+        getLastThreePurchases()
+            .then((response) => {
+                setBookList(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    });
 
     return (
         <Wrapper>
             <SectionTitle>
                 Last Purchases
             </SectionTitle>
-            {bookList.map((book, index) => (
-                <div key={index}>
+            {bookList.map((book: Purchases) => (
+                <div key={book.id}>
                     <img src={book.image} alt="book cover" />
                     <div>
                         <div>
@@ -42,7 +34,7 @@ export default function Purchases() {
                             <h6>{book.format}</h6>
                             <h6>{book.store}</h6>
                         </div>
-                        <p>{`R$ ${book.price.toFixed(2).toString().replace('.', ',')}`}</p>
+                        <p>{`R$ ${(book.price/100).toFixed(2).toString().replace('.', ',')}`}</p>
                     </div>
                 </div>
             ))}
