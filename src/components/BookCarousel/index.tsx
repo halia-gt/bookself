@@ -9,24 +9,6 @@ export default function BookCarousel() {
     const carousel = useRef<HTMLUListElement>(null);
     const [bookList, setBookList] = useState<ReadingBook[] | []>([]);
 
-    const bookList1 = [{
-            id: 1,
-            image: 'https://m.media-amazon.com/images/I/81pA6-hv+2L.jpg',
-            title: 'The Institue',
-            author: 'Stephen King'
-        }, {
-            id: 2,
-            image: 'http://madelinemiller.com/wp-content/uploads/2018/01/circe-us.jpg',
-            title: 'Circe',
-            author: 'Madeline Miller'
-        }, {
-            id: 3,
-            image: 'https://m.media-amazon.com/images/I/91DIYtTpRnL.jpg',
-            title: 'The Priority of the Orange Tree',
-            author: 'Samantha Shannon'
-        }
-    ];
-
     useEffect(() => {
         getReadingBooks()
             .then((response) => {

@@ -1,13 +1,30 @@
+import { NextReadsTBR } from "protocols";
+import { useEffect, useState } from "react";
+import { getPriorityTBR } from "services/api";
 import SectionTitle from "../../assets/styles/SectionTitle";
 import { ImageWrapper, Wrapper } from "./styles";
 
 export default function NextReads() {
-    const bookList = [
-        'https://m.media-amazon.com/images/I/81MnY8Q7OLL.jpg',
-        'https://m.media-amazon.com/images/I/91ZQaXqO2nL.jpg',
-        'https://1.bp.blogspot.com/-0kbISjfq0jU/YMdQp7iJ48I/AAAAAAAAacw/HPAfI1D7ibQFEjRwf8QNqOEa5DgapfE2QCLcBGAsYHQ/s650/9788584392162_gg.jpg',
-        undefined
-    ]
+    const [bookList, setBookList] = useState<NextReadsTBR[] | []>([]);
+
+    useEffect(() => {
+        getPriorityTBR()
+            .then((response) => {
+                const list: NextReadsTBR[] = response.data;
+                for (let i = 0 ; i < 4 ; i ++) {
+                    if (!list[i]) {
+                        list[i] = {
+                            id: undefined,
+                            image: undefined,
+                        };
+                    }
+                }
+                setBookList(list);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    });
 
     return (
         <Wrapper>
@@ -15,9 +32,9 @@ export default function NextReads() {
                 Next Reads
             </SectionTitle>
             <div>
-                {bookList.map((img, index) => (
+                {bookList.map((book: NextReadsTBR, index: number) => (
                     <ImageWrapper key={index} img={true}>
-                        {img ? <img src={img} alt="bookimage"/> : <>+</>}
+                        {book.image ? <img src={book.image} alt="book image"/> : <>+</>}
                     </ImageWrapper>
                 ))}
             </div>
