@@ -15,8 +15,8 @@ export default function Home() {
                 <main>
                     <BookCarousel />
                     <NextReads />
-                    <LastPurchases />
                     <StatsSummary />
+                    <LastPurchases />
                 </main>
             </Wrapper>
             <Footer home={true} />

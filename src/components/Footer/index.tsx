@@ -3,10 +3,10 @@ import {
     IoHome,
     IoLibraryOutline,
     IoLibrary,
-    IoLayersOutline,
-    IoLayers,
-    IoRocketOutline,
-    IoRocket,
+    IoTrophyOutline,
+    IoTrophy,
+    IoSettingsOutline,
+    IoSettings,
 } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import {
@@ -42,12 +42,12 @@ export default function Footer({ home = false, shelf = false, series = false, tb
             </NavMid>
             <NavWrapper>
                 <SeriesWrapper series={series}>
-                    {series ? <IoLayers /> : <IoLayersOutline />}
-                    Series
+                    {series ? <IoTrophy /> : <IoTrophyOutline />}
+                    Tops
                 </SeriesWrapper>
                 <TBRWrapper tbr={tbr}>
-                    {tbr ? <IoRocket /> : <IoRocketOutline />}
-                    TBR
+                    {tbr ? <IoSettings /> : <IoSettingsOutline />}
+                    Settings
                 </TBRWrapper>
             </NavWrapper>
         </Wrapper>
