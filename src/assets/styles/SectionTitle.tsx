@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export default function SectionTitle({ children }) {
+type Props = {
+    children: string,
+};
+
+export default function SectionTitle({ children }: Props) {
     return (
         <Wrapper>
             { children }

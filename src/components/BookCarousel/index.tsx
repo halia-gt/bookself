@@ -17,7 +17,7 @@ export default function BookCarousel() {
             .catch((error) => {
                 console.log(error);
             });
-    });
+    }, [setBookList]);
 
     function nextBook() {
         if (carousel.current) {
@@ -27,7 +27,7 @@ export default function BookCarousel() {
 
     function prevBook() {
         if (carousel.current) {
-            carousel.current.scrollLeft -= carousel.current.offsetWidth;        
+            carousel.current.scrollLeft -= carousel.current.offsetWidth;
         }
     }
 

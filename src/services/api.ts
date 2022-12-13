@@ -15,8 +15,14 @@ function getLastThreePurchases() {
     return promise;
 }
 
+function getMainStats(year: number) {
+    const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/stats/main/${year}`);
+    return promise;
+}
+
 export {
     getReadingBooks,
     getPriorityTBR,
     getLastThreePurchases,
+    getMainStats,
 };

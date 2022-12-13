@@ -15,7 +15,7 @@ export default function LastPurchases() {
             .catch((error) => {
                 console.log(error);
             });
-    });
+    }, [setBookList]);
 
     return (
         <Wrapper>

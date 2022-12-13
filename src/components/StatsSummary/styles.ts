@@ -4,4 +4,13 @@ const Wrapper = styled.section`
     margin-top: 3rem;
 `;
 
-export { Wrapper };
+const MainStatsWrapper = styled.table`
+    width: 100%;
+    margin-top: 1rem;
+    
+`;
+
+export {
+    Wrapper,
+    MainStatsWrapper,
+};

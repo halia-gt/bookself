@@ -24,7 +24,7 @@ export default function NextReads() {
             .catch((error) => {
                 console.log(error);
             });
-    });
+    }, [setBookList]);
 
     return (
         <Wrapper>
