@@ -74,6 +74,8 @@ const GlobalStyles = createGlobalStyle`
         --accent-color: #FFB5B5;
         --text-black: #333333;
         --main-gray: #C5D4DB;
+        --white-background: #fdfdfd;
+        --accent-background: #ffcbcb;
     }
 `;
 

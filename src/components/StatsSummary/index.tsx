@@ -25,10 +25,9 @@ const noStats = {
 
 export default function StatsSummary() {
     const [stats, setStats] = useState<StatsMain>(noStats);
+    const year = new Date().getFullYear();
 
     useEffect(() => {
-        const year = new Date().getFullYear();
-
         getMainStats(year)
             .then((response) => {
                 setStats(response.data);
@@ -36,12 +35,12 @@ export default function StatsSummary() {
             .catch((error) => {
                 console.log(error);
             });
-    }, [setStats]);
+    }, [setStats, year]);
 
     return (
         <Wrapper>
-            <SectionTitle>
-                Stats Summary
+            <SectionTitle>  
+                {`${year} Stats Summary`}
             </SectionTitle>
             {stats.year > 0 ? <MainStats {...stats} /> : <></>}
         </Wrapper>

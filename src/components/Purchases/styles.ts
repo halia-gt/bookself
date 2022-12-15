@@ -5,7 +5,7 @@ const Wrapper = styled.section`
     color: var(--text-black);
 
     & > div {
-        background-color: #fdfdfd;
+        background-color: var(--white-background);
         margin-top: 1rem;
         display: flex;
         padding: 0.6rem;
