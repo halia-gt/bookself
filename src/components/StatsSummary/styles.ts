@@ -87,12 +87,32 @@ const OwnedCard = styled(DataWrapper)`
     
     & > p {
         text-transform: uppercase;
+        margin-left: 0.8rem;
     }
 
     & > h6 {
         font-size: 1.5rem;
         text-transform: uppercase;
         margin-right: 0.8rem;
+    }
+`;
+
+const FavoriteBook = styled(DataWrapper)`
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-color);
+    color: var(--main-white);
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px 0;
+
+    & > h6 {
+        font-style: italic;
+        font-size: 2rem;
+    }
+
+    & > p {
+        font-size: 1.2rem;
     }
 `;
 
@@ -105,4 +125,5 @@ export {
     SecondaryContainer,
     MinorData,
     OwnedCard,
+    FavoriteBook,
 };

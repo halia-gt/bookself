@@ -1,6 +1,6 @@
 import ProgressBar from "assets/styles/ProgressBar";
 import { StatsMain } from "protocols";
-import { MainData, MainStatsWrapper, MinorData, OwnedCard, PrimaryContainer, SecondaryContainer, SecondaryData } from "./styles";
+import { FavoriteBook, MainData, MainStatsWrapper, MinorData, OwnedCard, PrimaryContainer, SecondaryContainer, SecondaryData } from "./styles";
 
 export default function MainStats(props: StatsMain) {
     const hours: string = props.total_hours_listened.hours.toString();
@@ -59,6 +59,11 @@ export default function MainStats(props: StatsMain) {
             </OwnedCard>
 
             <ProgressBar percentage={readingOwnedPercentage} title={"Owned Books Read"} />
+
+            <FavoriteBook>
+                <p>Favorite Book of the Year</p>
+                <h6>{props.favorite_book}</h6>
+            </FavoriteBook>
         </MainStatsWrapper>
     );
 }
