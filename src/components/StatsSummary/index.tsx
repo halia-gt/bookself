@@ -25,7 +25,7 @@ const noStats = {
 
 export default function StatsSummary() {
     const [stats, setStats] = useState<StatsMain>(noStats);
-    const year = new Date().getFullYear();
+    const year = new Date().getFullYear() - 1;
 
     useEffect(() => {
         getMainStats(year)

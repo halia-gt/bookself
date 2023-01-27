@@ -15,7 +15,9 @@ export default function NextReads() {
                     if (!list[i]) {
                         list[i] = {
                             id: undefined,
-                            image: undefined,
+                            book_id: undefined,
+                            books: undefined,
+                            priority: false,
                         };
                     }
                 }
@@ -33,8 +35,8 @@ export default function NextReads() {
             </SectionTitle>
             <div>
                 {bookList.map((book: NextReadsTBR, index: number) => (
-                    <ImageWrapper key={index} img={true}>
-                        {book.image ? <img src={book.image} alt="book image"/> : <>+</>}
+                    <ImageWrapper key={index} img={book.priority}>
+                        {book.books ? <img src={book.books.image} alt="book image"/> : <>+</>}
                     </ImageWrapper>
                 ))}
             </div>

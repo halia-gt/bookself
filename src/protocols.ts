@@ -1,27 +1,49 @@
 export type ReadingBook = {
     id: number,
+    author_id: number,
+    authors: Author,
     book_id: number,
-    title: string,
-    author: string,
+    books: Book,
+};
+
+export type Author = {
+    id: number,
+    country_id: number,
+    identity: string,
+    name: string,
+};
+
+export type Book = {
+    id: number,
+    classic: boolean,
+    audience_id: number,
+    genre_id: number,
     image: string,
-    format: string,
+    pages: number,
+    publication_date: string,
+    subgenre_id: number,
+    title: string,
 };
 
 export type NextReadsTBR = {
     id: number | undefined,
-    image: string | undefined,
+    book_id: number | undefined,
+    books: Book | undefined,
+    priority: boolean,
 };
 
 export type Purchases = {
     id: number,
     book_id: number,
-    title: string,
-    author: string,
-    image: string,
-    price: number,
+    books: Book & {
+        authors_books: {
+            authors: Author,
+        }[],
+    },
+    date: string,
     format: string,
+    price: number,
     store: string,
-    month: number,
 }
 
 export type StatsMain = {

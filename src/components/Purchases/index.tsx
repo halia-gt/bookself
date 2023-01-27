@@ -24,11 +24,11 @@ export default function LastPurchases() {
             </SectionTitle>
             {bookList.map((book: Purchases) => (
                 <div key={book.id}>
-                    <img src={book.image} alt="book cover" />
+                    <img src={book.books.image} alt="book cover" />
                     <div>
                         <div>
-                            <h4>{book.title}</h4>
-                            <h5>{book.author}</h5>
+                            <h4>{book.books.title}</h4>
+                            <h5>{book.books.authors_books[0].authors.name}</h5>
                         </div>
                         <div>
                             <h6>{book.format}</h6>

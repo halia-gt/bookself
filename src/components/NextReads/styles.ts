@@ -11,7 +11,7 @@ const Wrapper = styled.section`
     }
 `;
 
-const ImageWrapper = styled.div<{ img: boolean }>`
+const ImageWrapper = styled.div<{ img: boolean | undefined }>`
     border-radius: 50%;
     display: flex;
     justify-content: center;
