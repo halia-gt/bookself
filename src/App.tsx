@@ -1,3 +1,4 @@
+import Stats from "pages/Stats";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GlobalStyles } from "./assets/styles/GlobalStyles";
 import Home from "./pages/Home";
@@ -15,6 +16,10 @@ export default function App() {
                 <Route
                     path="/shelves"
                     element={ <Shelves /> }
+                />
+                <Route
+                    path="/stats"
+                    element={ <Stats /> }
                 />
             </Routes>
         </BrowserRouter>

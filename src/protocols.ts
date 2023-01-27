@@ -65,3 +65,9 @@ export type HoursListened = {
     hours: number,
     minutes: number,
 };
+
+export type Year = {
+    id: number,
+    year: number,
+    reading_goal: number,
+}

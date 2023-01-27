@@ -22,7 +22,7 @@ const Wrapper = styled.main`
         border-radius: 40px 40px 0 0;
         box-shadow: 0px -4px 6px 2px rgba(0, 0, 0, 0.05);
         padding: 10px;
-        padding-bottom: 100px;
+        padding-bottom: 120px;
         height: auto;
     }
 `;

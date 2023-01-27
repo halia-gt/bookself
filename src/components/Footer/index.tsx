@@ -30,11 +30,11 @@ export default function Footer({ home = false, shelf = false, series = false, tb
                     Home
                 </HomeWrapper>
                 <ShelfWrapper shelf={shelf}>
-                    {shelf ? <IoLibrary /> : <IoLibraryOutline onClick={() => {navigate('/shelves')}} />}
+                    {shelf ? <IoLibrary /> : <IoLibraryOutline onClick={() => navigate('/shelves')} />}
                     Shelves
                 </ShelfWrapper>
             </NavWrapper>
-            <NavMid>
+            <NavMid onClick={() => navigate('/stats')}>
                 <button>
                     Stats
                 </button>

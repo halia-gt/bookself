@@ -20,9 +20,15 @@ function getMainStats(year: number) {
     return promise;
 }
 
+function getYearList() {
+    const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/stats/years`);
+    return promise;
+}
+
 export {
     getReadingBooks,
     getPriorityTBR,
     getLastThreePurchases,
     getMainStats,
+    getYearList,
 };
