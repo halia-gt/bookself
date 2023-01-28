@@ -1,8 +1,8 @@
-import Stats from "pages/Stats";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GlobalStyles } from "./assets/styles/GlobalStyles";
 import Home from "./pages/Home";
 import Shelves from "./pages/Shelves";
+import Stats from "pages/Stats";
 
 export default function App() {
     return (

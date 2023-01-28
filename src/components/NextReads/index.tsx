@@ -36,7 +36,7 @@ export default function NextReads() {
             <div>
                 {bookList.map((book: NextReadsTBR, index: number) => (
                     <ImageWrapper key={index} img={book.priority}>
-                        {book.books ? <img src={book.books.image} alt="book image"/> : <>+</>}
+                        {book.books ? <img src={book.books.image} alt="book"/> : <>+</>}
                     </ImageWrapper>
                 ))}
             </div>

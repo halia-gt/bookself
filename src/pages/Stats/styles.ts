@@ -11,6 +11,7 @@ const MainWrapper = styled(Wrapper)`
 
     main {
         background-color: var(--main-color);
+        min-height: 90vh;
     }
 `;
 

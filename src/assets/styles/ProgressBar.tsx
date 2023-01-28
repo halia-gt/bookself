@@ -7,10 +7,10 @@ type Props = {
 
 export default function ProgressBar({ percentage, title }: Props) {
     return (
-        <Wrapper percentage={percentage}>
+        <Wrapper percentage={percentage > 100 ? 100 : percentage}>
             <h6>
                 {title}
-                <span>{`${percentage}%`}</span>
+                <span>{`${percentage > 100 ? 100 : percentage}%`}</span>
             </h6>
             <div>
                 <div></div>
