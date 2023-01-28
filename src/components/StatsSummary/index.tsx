@@ -23,24 +23,27 @@ const noStats = {
     least_pages: 0,
 };
 
-export default function StatsSummary() {
+export default function StatsSummary({ selectedYear = new Date().getFullYear() - 1 }: { selectedYear?: number }) {
     const [stats, setStats] = useState<StatsMain>(noStats);
-    const year = new Date().getFullYear() - 1;
 
     useEffect(() => {
-        getMainStats(year)
+        getMainStats(selectedYear)
             .then((response) => {
                 setStats(response.data);
             })
             .catch((error) => {
-                console.log(error);
+                if (error.response.status === 404) {
+                    setStats(noStats);
+                } else {
+                    console.log(error);
+                }
             });
-    }, [setStats, year]);
+    }, [setStats, selectedYear]);
 
     return (
         <Wrapper>
             <SectionTitle>  
-                {`${year} Stats Summary`}
+                {`${selectedYear} Stats Summary`}
             </SectionTitle>
             {stats.year > 0 ? <MainStats {...stats} /> : <></>}
         </Wrapper>
