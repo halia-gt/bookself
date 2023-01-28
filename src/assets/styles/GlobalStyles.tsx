@@ -63,7 +63,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     :root {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 400;
         --main-white: #f0f0f0;
         --main-color: #407088;

@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 const ButtonWrapper = styled.section`
     margin-top: 2rem;
-
-
 `;
 
 const Button = styled.button<{selected: boolean}>`

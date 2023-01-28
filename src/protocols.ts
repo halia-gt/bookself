@@ -71,3 +71,10 @@ export type Year = {
     year: number,
     reading_goal: number,
 }
+
+export type MonthlyDataType = {
+    month: number,
+    books: number,
+    pages: number,
+    minutes: number,
+};
