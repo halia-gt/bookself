@@ -55,8 +55,8 @@ const NavMid = styled.nav`
 const HomeWrapper = styled.div<{
         home?: boolean,
         shelf?: boolean,
-        series?: boolean,
-        tbr?: boolean
+        top?: boolean,
+        add?: boolean
     }>`
     display: flex;
     flex-direction: column;
@@ -74,12 +74,12 @@ const ShelfWrapper = styled(HomeWrapper)`
     color: ${props => props.shelf ? 'var(--main-color)' : 'var(--neutral-color)'};
 `;
 
-const SeriesWrapper = styled(HomeWrapper)`
-    color: ${props => props.series ? 'var(--main-color)' : 'var(--neutral-color)'};
+const TopWrapper = styled(HomeWrapper)`
+    color: ${props => props.top ? 'var(--main-color)' : 'var(--neutral-color)'};
 `;
 
-const TBRWrapper = styled(HomeWrapper)`
-    color: ${props => props.tbr ? 'var(--main-color)' : 'var(--neutral-color)'};
+const AddWrapper = styled(HomeWrapper)`
+    color: ${props => props.add ? 'var(--main-color)' : 'var(--neutral-color)'};
 `;
 
 export {
@@ -88,6 +88,6 @@ export {
     NavMid,
     HomeWrapper,
     ShelfWrapper,
-    SeriesWrapper,
-    TBRWrapper
+    TopWrapper,
+    AddWrapper,
 };

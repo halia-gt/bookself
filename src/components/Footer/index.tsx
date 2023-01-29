@@ -5,8 +5,8 @@ import {
     IoLibrary,
     IoTrophyOutline,
     IoTrophy,
-    IoSettingsOutline,
-    IoSettings,
+    IoAddCircleOutline,
+    IoAddCircle,
 } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import {
@@ -15,40 +15,40 @@ import {
     NavMid,
     HomeWrapper,
     ShelfWrapper,
-    SeriesWrapper,
-    TBRWrapper
+    TopWrapper,
+    AddWrapper
 } from "./styles";
 
-export default function Footer({ home = false, shelf = false, series = false, tbr = false }) {
+export default function Footer({ home = false, shelf = false, top = false, add = false }) {
     const navigate = useNavigate();
 
     return(
         <Wrapper>
             <NavWrapper>
                 <HomeWrapper home={home}>
-                    {home ? <IoHome /> : <IoHomeOutline onClick={() => {navigate('/')}} />}
+                    {home ? <IoHome /> : <IoHomeOutline onClick={() => {navigate("/")}} />}
                     Home
                 </HomeWrapper>
                 <ShelfWrapper shelf={shelf}>
-                    {shelf ? <IoLibrary /> : <IoLibraryOutline onClick={() => navigate('/shelves')} />}
+                    {shelf ? <IoLibrary /> : <IoLibraryOutline onClick={() => navigate("/shelves")} />}
                     Shelves
                 </ShelfWrapper>
             </NavWrapper>
-            <NavMid onClick={() => navigate('/stats')}>
+            <NavMid onClick={() => navigate("/stats")}>
                 <button>
                     Stats
                 </button>
                 <div></div>
             </NavMid>
             <NavWrapper>
-                <SeriesWrapper series={series}>
-                    {series ? <IoTrophy /> : <IoTrophyOutline />}
+                <TopWrapper top={top}>
+                    {top ? <IoTrophy /> : <IoTrophyOutline />}
                     Tops
-                </SeriesWrapper>
-                <TBRWrapper tbr={tbr}>
-                    {tbr ? <IoSettings /> : <IoSettingsOutline />}
-                    Settings
-                </TBRWrapper>
+                </TopWrapper>
+                <AddWrapper add={add}>
+                    {add ? <IoAddCircle /> : <IoAddCircleOutline />}
+                    Add Book
+                </AddWrapper>
             </NavWrapper>
         </Wrapper>
     );
