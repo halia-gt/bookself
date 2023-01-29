@@ -8,11 +8,11 @@ ChartJS.register(ArcElement, Legend, Tooltip);
 
 export default function Chart({ data, type }: { data: BookStats[], type: string }) {
     const chartData = {
-        labels: data.map(e => e.book_format),
+        labels: data.map(e => e.label),
         datasets: [
             {
                 label: type,
-                data: data.map(e => e._count.book_id),
+                data: data.map(e => e.count),
                 backgroundColor: [
                     "#407088",
                     "#FFB5B5",

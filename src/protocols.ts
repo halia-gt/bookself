@@ -80,8 +80,6 @@ export type MonthlyDataType = {
 };
 
 export type BookStats = {
-    book_format?: string,
-    _count: {
-        book_id: number,
-    }
+    label: string,
+    count: number,
 };

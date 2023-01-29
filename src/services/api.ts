@@ -35,6 +35,11 @@ function getFormatsStats(year: number) {
     return promise;
 }
 
+function getStarStats(year: number) {
+    const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/stats/stars/${year}`);
+    return promise;
+}
+
 export {
     getReadingBooks,
     getPriorityTBR,
@@ -43,4 +48,5 @@ export {
     getYearList,
     getMonthlyStats,
     getFormatsStats,
+    getStarStats,
 };
