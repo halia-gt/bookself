@@ -61,7 +61,7 @@ const HomeWrapper = styled.div<{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: ${props => props.home ? 'var(--main-color)' : 'var(--neutral-color)'};
+    color: ${props => props.home ? "var(--main-color)" : "var(--neutral-color)"};
     font-size: 0.8rem;
 
     svg {
@@ -71,15 +71,15 @@ const HomeWrapper = styled.div<{
 `;
 
 const ShelfWrapper = styled(HomeWrapper)`
-    color: ${props => props.shelf ? 'var(--main-color)' : 'var(--neutral-color)'};
+    color: ${props => props.shelf ? "var(--main-color)" : "var(--neutral-color)"};
 `;
 
 const TopWrapper = styled(HomeWrapper)`
-    color: ${props => props.top ? 'var(--main-color)' : 'var(--neutral-color)'};
+    color: ${props => props.top ? "var(--main-color)" : "var(--neutral-color)"};
 `;
 
 const AddWrapper = styled(HomeWrapper)`
-    color: ${props => props.add ? 'var(--main-color)' : 'var(--neutral-color)'};
+    color: ${props => props.add ? "var(--main-color)" : "var(--neutral-color)"};
 `;
 
 export {

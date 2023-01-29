@@ -78,3 +78,10 @@ export type MonthlyDataType = {
     pages: number,
     minutes: number,
 };
+
+export type BookStats = {
+    book_format?: string,
+    _count: {
+        book_id: number,
+    }
+};

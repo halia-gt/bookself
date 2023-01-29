@@ -120,6 +120,7 @@ export {
     Wrapper,
     MainStatsWrapper,
     PrimaryContainer,
+    DataWrapper,
     MainData,
     SecondaryData,
     SecondaryContainer,

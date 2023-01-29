@@ -4,6 +4,7 @@ import YearButtons from "components/YearButtons";
 import Footer from "../../components/Footer/index";
 import StatsSummary from "components/StatsSummary";
 import MonthlyChart from "components/MonthlyChart";
+import BookCharts from "components/BookCharts";
 
 export default function Stats() {
     const thisYear = new Date().getFullYear();
@@ -17,6 +18,7 @@ export default function Stats() {
                     <YearButtons setSelectedYear={setSelectedYear} selectedYear={selectedYear} />
                     <StatsSummary selectedYear={selectedYear} />
                     <MonthlyChart selectedYear={selectedYear} />
+                    <BookCharts selectedYear={selectedYear} />
                 </main>
             </MainWrapper>
             <Footer />

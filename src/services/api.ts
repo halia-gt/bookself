@@ -30,6 +30,11 @@ function getMonthlyStats(year: number) {
     return promise;
 }
 
+function getFormatsStats(year: number) {
+    const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/stats/formats/${year}`);
+    return promise;
+}
+
 export {
     getReadingBooks,
     getPriorityTBR,
@@ -37,4 +42,5 @@ export {
     getMainStats,
     getYearList,
     getMonthlyStats,
+    getFormatsStats,
 };
