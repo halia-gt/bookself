@@ -6,6 +6,17 @@ const MainWrapper = styled(Wrapper)`
         height: 10vh;
         padding: 20px 20px;
     }
+
+    main {
+        min-height: 90vh;
+    }
+
+    & > main > div {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border: 1px solid red;
+    }
 `;
 
 export { MainWrapper };

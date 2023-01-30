@@ -20,9 +20,10 @@ export type Book = {
     genre_id: number,
     image: string,
     pages: number,
-    publication_date: string,
+    publication_date: Date,
     subgenre_id: number,
     title: string,
+    average_rating: string,
 };
 
 export type NextReadsTBR = {
@@ -82,4 +83,71 @@ export type MonthlyDataType = {
 export type BookStats = {
     label: string,
     count: number,
+};
+
+type AuthorsBook = {
+    id: number,
+    book_id: number,
+    author_id: number,
+    authors: {
+        id: number,
+        name: string,
+        identity: string,
+        country_id: number,
+    }
+};
+
+type Genre = {
+    id: number,
+    name: string,
+}
+
+type SeriesBook = {
+    id: number,
+    book_id: number,
+    order: number,
+    series_end: boolean,
+    series_id: 24,
+};
+
+type Series = {
+    id: number,
+    name: string,
+    publish_status: string,
+    total_number_of_books: number,
+};
+
+type Owned = {
+    id: number,
+    acquired: string,
+    book_format: string,
+    book_id: number,
+};
+
+type TopBook = {
+    id: number,
+    book_id: number,
+    position: number,
+    year_id: number,
+};
+
+export type BookRead = {
+    id: number,
+    acquired: string,
+    author_status: string,
+    book_format: string,
+    book_language: string,
+    book_id: number,
+    date_finished: Date,
+    date_started: Date,
+    minutes: number | null,
+    rating: string,
+    books: Book & {
+        authors_book: AuthorsBook[],
+        genres: Genre,
+        subgenre: Genre,
+        owned: Owned[] | null,
+        series_books: (SeriesBook & { series: Series })[] | null,
+        books: TopBook[] | null,
+    },
 };
