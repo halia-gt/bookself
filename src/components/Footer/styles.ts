@@ -48,6 +48,7 @@ const NavMid = styled.nav`
         bottom: calc(60px - 55px + 10px);
         box-shadow: 0 -4px 6px 2px rgba(0, 0, 0, 0.05);
         font-size: 1rem;
+        font-weight: 700;
         color: var(--main-white);
     }
 `;

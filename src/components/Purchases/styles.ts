@@ -4,7 +4,11 @@ const Wrapper = styled.section`
     margin-top: 3rem;
     color: var(--text-black);
 
-    & > div {
+    & > a {
+        color: initial;
+    }
+
+    & > a > div {
         background-color: var(--white-background);
         margin-top: 1rem;
         display: flex;
@@ -14,7 +18,7 @@ const Wrapper = styled.section`
         position: relative;
     }
 
-    & > div > div {
+    & > a > div > div {
         display: flex;
         flex-direction: column;
         justify-content: space-between;

@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import { BookRead } from "protocols";
 import Rating from "assets/styles/Rating";
+import { Link } from "react-router-dom";
 
 export default function BookCard(props: BookRead) {
     return (
-        <Wrapper>
-            <div>
-                <img src={props.books.image} alt="book cover" />
-                <Rating rating={Number(props.rating)} />
-            </div>
-        </Wrapper>   
+        <Link to={`/book/${props.book_id}`}>
+            <Wrapper>
+                <div>
+                    <img src={props.books.image} alt="book cover" />
+                    <Rating rating={Number(props.rating)} />
+                </div>
+            </Wrapper>   
+        </Link>
     );
 }
 

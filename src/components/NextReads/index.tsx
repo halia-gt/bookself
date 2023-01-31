@@ -1,5 +1,6 @@
 import { NextReadsTBR } from "protocols";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getPriorityTBR } from "services/api";
 import SectionTitle from "../../assets/styles/SectionTitle";
 import { ImageWrapper, Wrapper } from "./styles";
@@ -35,9 +36,11 @@ export default function NextReads() {
             </SectionTitle>
             <div>
                 {bookList.map((book: NextReadsTBR, index: number) => (
-                    <ImageWrapper key={index} img={book.priority}>
-                        {book.books ? <img src={book.books.image} alt="book"/> : <>+</>}
-                    </ImageWrapper>
+                    <Link to={`/book/${book.book_id}`} key={index}>
+                        <ImageWrapper img={book.priority}>
+                            {book.books ? <img src={book.books.image} alt="book"/> : <>+</>}
+                        </ImageWrapper>
+                    </Link>
                 ))}
             </div>
         </Wrapper>

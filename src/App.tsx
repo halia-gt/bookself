@@ -3,6 +3,7 @@ import { GlobalStyles } from "./assets/styles/GlobalStyles";
 import Home from "./pages/Home";
 import Shelves from "./pages/Shelves";
 import Stats from "pages/Stats";
+import Book from "pages/Book";
 
 export default function App() {
     return (
@@ -20,6 +21,10 @@ export default function App() {
                 <Route
                     path="/stats"
                     element={ <Stats /> }
+                />
+                <Route
+                    path="/book/:bookId"
+                    element={ <Book /> }
                 />
             </Routes>
         </BrowserRouter>
