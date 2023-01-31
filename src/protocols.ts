@@ -15,15 +15,15 @@ export type Author = {
 
 export type Book = {
     id: number,
-    classic: boolean,
     audience_id: number,
+    average_rating: string,
+    classic: boolean,
     genre_id: number,
     image: string,
     pages: number,
     publication_date: Date,
     subgenre_id: number,
     title: string,
-    average_rating: string,
 };
 
 export type NextReadsTBR = {
@@ -97,7 +97,7 @@ type AuthorsBook = {
     }
 };
 
-type Genre = {
+type Generic = {
     id: number,
     name: string,
 }
@@ -131,6 +131,13 @@ type TopBook = {
     year_id: number,
 };
 
+type RepresentativitiesBook = {
+    id: number,
+    book_id: number,
+    representativity_id: number,
+    representativities: Generic,
+};
+
 export type BookRead = {
     id: number,
     acquired: string,
@@ -144,10 +151,32 @@ export type BookRead = {
     rating: string,
     books: Book & {
         authors_book: AuthorsBook[],
-        genres: Genre,
-        subgenre: Genre,
-        owned: Owned[] | null,
-        series_books: (SeriesBook & { series: Series })[] | null,
+        genres: Generic,
+        subgenre: Generic,
+        owned: Owned[] | [],
+        series_books: (SeriesBook & { series: Series })[] | [],
         books: TopBook[] | null,
     },
 };
+
+export type CompleteBook = {
+    id: number,
+    author_id: number,
+    book_id: number,
+    authors: Author | Author[],
+    books: Book & {
+        audiences: Generic,
+        books: {
+            id: number,
+            year_id: number,
+            position: number,
+            book_id: number,
+        }[] | [],
+        books_read: Omit<BookRead, "books">[] | [],
+        genres: Generic,
+        owned: Owned[] | [],
+        representativities_books: RepresentativitiesBook[] | [],
+        series_books: (SeriesBook & { series: Series })[] | [],
+        subgenres: Generic,
+    },
+}

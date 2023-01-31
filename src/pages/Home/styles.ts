@@ -14,7 +14,7 @@ const Wrapper = styled.main`
         color: var(--main-white);
         text-align: center;
         font-size: 1.8rem;
-        font-family: 'Libre Baskerville', serif;
+        font-family: "Libre Baskerville", serif;
     }
 
     main {
