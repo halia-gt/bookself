@@ -76,6 +76,7 @@ const GlobalStyles = createGlobalStyle`
         --main-gray: #C5D4DB;
         --white-background: #fdfdfd;
         --accent-background: #ffcbcb;
+        --star-color: #EE9F55;
     }
 `;
 

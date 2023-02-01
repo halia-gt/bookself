@@ -24,21 +24,26 @@ const Wrapper = styled.section`
 
     & > div > h3 {
         font-size: 1.1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2vh;
     }
 
-    & > div > p {
-        display: flex;
-        align-items: center;
-        width: 83%;
-        justify-content: space-between;
-        font-weight: 700;
-        color: #FAEEC8;
-    }
 
     & > div > div {
         display: flex;
         margin-top: 1rem;
+    }
+
+    & > div > div:nth-child(3) {
+        display: flex;
+        margin-top: 1rem;
+        align-items: center;
+    }
+
+    & > div > div > p {
+        font-weight: 700;
+        color: var(--star-color);
+        margin-left: 8px;
+        font-size: 1.2rem;
     }
 
     & > div > div > span {

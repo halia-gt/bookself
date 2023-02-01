@@ -21,7 +21,7 @@ export type Book = {
     genre_id: number,
     image: string,
     pages: number,
-    publication_date: Date,
+    publication_date: string,
     subgenre_id: number,
     title: string,
 };
@@ -145,8 +145,8 @@ export type BookRead = {
     book_format: string,
     book_language: string,
     book_id: number,
-    date_finished: Date,
-    date_started: Date,
+    date_finished: string,
+    date_started: string,
     minutes: number | null,
     rating: string,
     books: Book & {

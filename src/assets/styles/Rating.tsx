@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { IoStarOutline, IoStar, IoStarHalf } from "react-icons/io5";
 
-export default function Rating({ rating, color = false, bigSize = false }: { rating: number, color?: boolean, bigSize?: boolean }) {
+export default function Rating({ rating, bigSize = false }: { rating: number, bigSize?: boolean }) {
     const ratingRound = Math.round(rating * 2) / 2;
 
     return (
-        <Wrapper colour={color} bigSize={bigSize}>
+        <Wrapper bigSize={bigSize}>
             {ratingRound >= 1 ? <IoStar /> : ratingRound === 0.5 ? <IoStarHalf /> : <IoStarOutline />}
             {ratingRound >= 2 ? <IoStar /> : ratingRound === 1.5 ? <IoStarHalf /> : <IoStarOutline />}
             {ratingRound >= 3 ? <IoStar /> : ratingRound === 2.5 ? <IoStarHalf /> : <IoStarOutline />}
@@ -16,13 +16,12 @@ export default function Rating({ rating, color = false, bigSize = false }: { rat
 }
 
 const Wrapper = styled.div<{
-    colour: boolean,
     bigSize: boolean,
 }>`
     display: flex;
     
     & > svg {
-        color: ${props => props.colour ? "#FAEEC8" : "var(--main-white)"};
+        color: var(--star-color);
         margin-left: 3px;
         font-size: ${props => props.bigSize ? "1.6rem" : "initial"};
     } 

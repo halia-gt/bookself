@@ -23,7 +23,10 @@ export default function BookSummary(props: CompleteBook) {
             <div>
                 <h2>{book.title}</h2>
                 <h3>{author.name}</h3>
-                <p><Rating rating={Number(book.average_rating)} color={true} bigSize={true} /> {Number(book.average_rating).toFixed(2)}</p>
+                <div>
+                    <Rating rating={Number(book.average_rating)} bigSize={true} />
+                    <p>{Number(book.average_rating).toFixed(2)}</p>
+                </div>
                 <div>
                     <span>{book.genres.name.replace("_", " ")}</span>
                     <span>{book.subgenres.name.replace("_", " ")}</span>

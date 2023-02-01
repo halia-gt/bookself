@@ -5,6 +5,7 @@ import { getBookById } from "services/api";
 import { MainWrapper } from "./styles";
 import { CompleteBook } from "protocols";
 import BookSummary from "components/BookSummary";
+import BookInfo from "components/BookInfo";
 
 const noBook = {
     id: 0,
@@ -24,7 +25,7 @@ const noBook = {
         genre_id: 0,
         image: "",
         pages: 0,
-        publication_date: new Date(),
+        publication_date: "",
         subgenre_id: 0,
         title: "",
         audiences: {
@@ -59,7 +60,7 @@ export default function Book() {
             .catch((error) => {
                 console.log(error);
             });
-    }, [bookId]);
+    }, [bookId, setBook]);
 
     return(
         <MainWrapper>
@@ -68,6 +69,7 @@ export default function Book() {
                 <BookSummary {...book} />
             </header>
             <main>
+                <BookInfo {...book} />
             </main>
             <Footer />
         </MainWrapper>
