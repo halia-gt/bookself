@@ -7,6 +7,7 @@ import { CompleteBook } from "protocols";
 import BookSummary from "components/BookSummary";
 import BookInfo from "components/BookInfo";
 import Logo from "components/Logo";
+import BookContext from "contexts/bookContext";
 
 const noBook = {
     id: 0,
@@ -52,6 +53,11 @@ const noBook = {
 export default function Book() {
     const { bookId } = useParams<{ bookId: string }>();
     const [book, setBook] = useState<CompleteBook>(noBook);
+    const [refresh, setRefresh] = useState<boolean>(false);
+    const aux = {
+        refresh,
+        setRefresh,
+    }
 
     useEffect(() => {
         getBookById(Number(bookId))
@@ -61,18 +67,20 @@ export default function Book() {
             .catch((error) => {
                 console.log(error);
             });
-    }, [bookId, setBook]);
+    }, [bookId, setBook, refresh]);
 
     return(
-        <MainWrapper>
-            <header>
-                <Logo />
-                <BookSummary {...book} />
-            </header>
-            <main>
-                <BookInfo {...book} />
-            </main>
-            <Footer />
-        </MainWrapper>
+        <BookContext.Provider value={aux}>
+            <MainWrapper>
+                <header>
+                    <Logo />
+                    <BookSummary {...book} />
+                </header>
+                <main>
+                    <BookInfo {...book} />
+                </main>
+                <Footer />
+            </MainWrapper>
+        </BookContext.Provider>
     );
 }

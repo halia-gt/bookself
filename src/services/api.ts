@@ -55,6 +55,14 @@ function getBookById(bookId: number) {
     return promise;
 }
 
+function postBookRead(bookId: number, body: {
+    rating: number,
+    date_finished: string,
+}) {
+    const promise = axios.post(`${process.env.REACT_APP_BASE_URL}/books/${bookId}`, body);
+    return promise;
+}
+
 export {
     getReadingBooks,
     getPriorityTBR,
@@ -67,4 +75,5 @@ export {
     getGenreStats,
     getBooksRead,
     getBookById,
+    postBookRead,
 };
