@@ -2,7 +2,7 @@ import { Wrapper } from "pages/Home/styles";
 import styled from "styled-components";
 
 const MainWrapper = styled(Wrapper)`
-    header {
+    & > header {
         height: 30vh;
         padding: 20px 20px;
         display: flex;
@@ -10,11 +10,15 @@ const MainWrapper = styled(Wrapper)`
         justify-content: space-between;
     }
 
-    header > h1 {
-        font-size: 1.5rem;
+    & > header > div > h1 {
+        font-size: 1rem;
     }
 
-    main {
+    & > header > div > svg {
+        font-size: 1.7rem;
+    }
+
+    & > main {
         min-height: 70vh;
     }
 

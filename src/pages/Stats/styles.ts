@@ -2,12 +2,20 @@ import styled from "styled-components";
 import { Wrapper } from "../Home/styles";
 
 const MainWrapper = styled(Wrapper)`
-    header {
+    & > header {
         height: 10vh;
         padding: 20px 20px;
     }
 
-    main {
+    & > header > div > h1 {
+        font-size: 1rem;
+    }
+
+    & > header > div > svg {
+        font-size: 1.7rem;
+    }
+
+    & > main {
         min-height: 90vh;
     }
 `;

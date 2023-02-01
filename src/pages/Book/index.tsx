@@ -6,6 +6,7 @@ import { MainWrapper } from "./styles";
 import { CompleteBook } from "protocols";
 import BookSummary from "components/BookSummary";
 import BookInfo from "components/BookInfo";
+import Logo from "components/Logo";
 
 const noBook = {
     id: 0,
@@ -65,7 +66,7 @@ export default function Book() {
     return(
         <MainWrapper>
             <header>
-                <h1>Bookself</h1>
+                <Logo />
                 <BookSummary {...book} />
             </header>
             <main>
