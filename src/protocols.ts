@@ -180,3 +180,19 @@ export type CompleteBook = {
         subgenres: Generic,
     },
 }
+
+export type GoogleData = {
+    id: string,
+    volumeInfo: GoogleBook,
+}
+
+export type GoogleBook = {
+    authors: string[],
+    imageLinks: {
+        smallThumbnail: string,
+        thumbnail: string,
+    },
+    pageCount: number,
+    publishedDate: string,
+    title: string,
+};

@@ -21,13 +21,6 @@ const MainWrapper = styled(Wrapper)`
     & > main {
         min-height: 70vh;
     }
-
-    & > main > div {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        border: 1px solid red;
-    }
 `;
 
 export { MainWrapper };

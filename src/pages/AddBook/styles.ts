@@ -1,5 +1,5 @@
+import { Wrapper } from "pages/Home/styles";
 import styled from "styled-components";
-import { Wrapper } from "../Home/styles";
 
 const MainWrapper = styled(Wrapper)`
     & > header {
@@ -17,12 +17,6 @@ const MainWrapper = styled(Wrapper)`
 
     & > main {
         min-height: 90vh;
-    }
-
-    & > main > div {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
     }
 `;
 

@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Shelves from "./pages/Shelves";
 import Stats from "pages/Stats";
 import Book from "pages/Book";
+import AddBook from "pages/AddBook";
 
 export default function App() {
     return (
@@ -21,6 +22,10 @@ export default function App() {
                 <Route
                     path="/stats"
                     element={ <Stats /> }
+                />
+                <Route
+                    path="/book/add"
+                    element={ <AddBook /> }
                 />
                 <Route
                     path="/book/:bookId"

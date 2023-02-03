@@ -46,7 +46,7 @@ export default function Footer({ home = false, shelf = false, top = false, add =
                     Tops
                 </TopWrapper>
                 <AddWrapper add={add}>
-                    {add ? <IoAddCircle /> : <IoAddCircleOutline />}
+                    {add ? <IoAddCircle /> : <IoAddCircleOutline onClick={() => navigate("/book/add")} />}
                     Add Book
                 </AddWrapper>
             </NavWrapper>

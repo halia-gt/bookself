@@ -16,7 +16,7 @@ export default function BookCard(props: BookRead) {
     );
 }
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
